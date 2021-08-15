@@ -20,7 +20,7 @@ margin-bottom: 10px;
 `
 export const LearMore = styled.Text`
 color: #fff;
-font-size:15;
+font-size:15px;
 font-weight: bold;
 
 
