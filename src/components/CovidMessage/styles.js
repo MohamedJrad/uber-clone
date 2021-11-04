@@ -8,7 +8,7 @@ border-top-right-radius: 10px;
 `
 export const Title = styled.Text`
 color:white;
-font-size: 20;
+font-size: 20px;
 font-weight: bold;
 margin-bottom: 10px;
 `
