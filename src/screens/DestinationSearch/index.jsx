@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { SafeAreaView, View, ScrollView, FlatList, StyleSheet } from 'react-native'
-import { TextInput, Container } from './styles'
+// import { TextInput, Container } from './styles'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+import { PLACES_API } from '@env'
+
 const index = () => {
     const [fromText, setFromText] = useState('')
     const [destinationText, setDestinationText] = useState('')
@@ -9,12 +11,12 @@ const index = () => {
     const [destinationPlace, setDestinationPlace] = useState(null)
 
 
-    // useEffect(() => {
-    //     effect
-    //     return () => {
-    //         cleanup
-    //     }
-    // }, [originPlace, destinationPlace])
+    useEffect(() => {
+        if (originPlace && destinationPlace) {
+            console.warn('Redirect to results')
+        }
+
+    }, [originPlace, destinationPlace])
     return (
         <SafeAreaView>
             < View style={styles.container} >
@@ -28,7 +30,7 @@ const index = () => {
 
                     }}
                     query={{
-                        key: 'AIzaSyC6fEsAiXGzr4_4qOrjspMxYoj8Uyliwuw',
+                        key: PLACES_API,
                         language: 'en',
                     }}
                     styles={{
@@ -43,7 +45,7 @@ const index = () => {
 
                     }}
                     query={{
-                        key: 'AIzaSyC6fEsAiXGzr4_4qOrjspMxYoj8Uyliwuw',
+                        key: PLACES_API,
                         language: 'en',
                     }}
                     styles={{
@@ -66,8 +68,8 @@ export default index
 
 const styles = StyleSheet.create({
     container: {
-        padding: '10px',
-        marginTop: '30px',
+        padding: 10,
+        // marginTop: '30px',
         height: '100%',
 
 
