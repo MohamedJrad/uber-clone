@@ -1,10 +1,16 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import Map from '../../components/RouteMap '
+import UberOptions from '../../components/UberOptions'
+import { MapContainer, Container } from './styles.js'
 const index = () => {
     return (
-        <View>
-            <Text>notJest a component</Text>
-        </View>
+        <Container >
+            <MapContainer>
+                <Map />
+            </MapContainer>
+            <UberOptions />
+
+        </Container>
 
 
     )
