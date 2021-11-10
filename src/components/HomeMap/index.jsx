@@ -31,7 +31,12 @@ const Map = () => {
             coordinate={{ latitude: car.latitude, longitude: car.longitude }}
 
           >
-            <MarkerImage style={{ resizeMode: 'contain' }} source={getImage(car.type)} />
+            <MarkerImage style={{
+              resizeMode: 'contain',
+              transform: [{
+                rotate: `${car.heading}deg`
+              }]
+            }} source={getImage(car.type)} />
 
           </Marker>
         })
